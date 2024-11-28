@@ -143,7 +143,7 @@ export const PROFILE_DATA = {
       technologies: ["NEXT", "Redux", "Tailwind CSS"],
       links: {
         github: null,
-        live: "https://resume-builder-arm.netlify.app/"
+        live: "https://resume-builder-arm.vercel.app/"
       },
       thumbnail: "resume.png",
       images: [
