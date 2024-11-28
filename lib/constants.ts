@@ -138,6 +138,19 @@ export const PROFILE_DATA = {
       ]
     },
     {
+      name: "Resume Builder",
+      description: "A resume builder using NEXT, Redux, and Tailwind CSS.",
+      technologies: ["NEXT", "Redux", "Tailwind CSS"],
+      links: {
+        github: null,
+        live: "https://resume-builder-arm.netlify.app/"
+      },
+      thumbnail: "resume.png",
+      images: [
+        "resume.png"
+      ]
+    },
+    {
       name: "Unsplash Images",
       description: "IoT dashboard for monitoring and controlling smart home devices with real-time updates and automation rules.",
       technologies: ["Vite", "Tailwind CSS","Unsplash API"],
