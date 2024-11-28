@@ -52,14 +52,14 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-slate-500 dark:from-primary dark:to-accent bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-slate-500 dark:from-primary dark:to-slate-500 bg-clip-text text-transparent"
           >
             {profile.name}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 text-center"
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 md:text-center"
           >
             {profile.summary}
           </motion.p>
