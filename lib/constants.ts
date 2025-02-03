@@ -9,9 +9,9 @@ export const PROFILE_DATA = {
     summary: "Full Stack developer confident with Next, MERN, S3, Redux, SQL, Django, Cypress and other web technologies along with experience in AI/ML; collaborating using git. Experienced with scraping complete databases through websites, and open APIs. Passionate about Cloud Infrastructure and LLMs."
   },
   skills: [
-    "ReactJS", "NextJS", "Redux","Docker","AWS Cloud", "Web Sockets", "MongoDB", "PostgresSQL",
-    "Git/GitHub", "Express", "Tailwind", "Bootstrap", "Python", "Cypress",
-    "Web Scraping", "S3/R2 (Filestorage)", "Selenium", "Django"
+    "ReactJS", "Node.js","NextJS", "Redux", "MongoDB", "PostgresSQL","Docker","AWS Cloud", "Web Sockets",
+    "Git/GitHub", "Express", "Python", "Cypress",
+    "Web Scraping", "S3/R2 (Filestorage)","Jest","Django","Prisma","Typescript",
   ],
   education: {
     degree: "B.Sc. in Computer Sciences",
@@ -69,6 +69,18 @@ export const PROFILE_DATA = {
       thumbnail: "goneBut.png",
       images: [
         "goneBut.png"   ]
+    },
+    {
+      name: "Nooru Web App",
+      description: "A health and wellness tracking website with courses using Next.js, Next Auth for auth, Nodemailer for mailing, and Vercel for hosting.",
+      technologies: ["Next.js", "Next Auth", "Nodemailer", "Vercel","Prisma","Redux","Typescript","Shad cn","Stripe"],
+      links: {
+        github: null,
+        live: "https://nooru-web-app-arm.vercel.app/"
+      },
+      thumbnail: "nooru.png",
+      images: [
+        "nooru.png"   ]
     },
     {
       name: "Crop Connect",
