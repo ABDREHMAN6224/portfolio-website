@@ -26,7 +26,7 @@ export default function Navbar() {
           className="text-xl font-bold"
           whileHover={{ scale: 1.05 }}
         >
-          ARM
+          {"<ARM/>"}
         </motion.a>
 
         <div className="flex items-center gap-4">
