@@ -11,7 +11,7 @@ export const PROFILE_DATA = {
   skills: [
     "ReactJS", "Node.js","NextJS", "Redux", "MongoDB", "PostgresSQL","Docker","AWS Cloud", "Web Sockets",
     "Git/GitHub", "Express", "Python", "Cypress",
-    "Web Scraping", "S3/R2 (Filestorage)","Jest","Django","Prisma","Typescript",
+    "Web Scraping", "S3/R2 (Filestorage)","Jest","Prisma","Typescript",
   ],
   education: {
     degree: "B.Sc. in Computer Sciences",
