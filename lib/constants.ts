@@ -23,7 +23,7 @@ export const PROFILE_DATA = {
     {
       title: "Full Stack Developer",
       company: "Infinity and Beyond",
-      duration: "Oct 2024 - Present",
+      duration: "Oct 2024 - Jan 2025",
       description: [
         "Working as a Full Stack Developer at Infinity and Beyond. Main technologies include Flask ,React ,Next.js, and S3, Postgres.",
 
@@ -58,6 +58,18 @@ export const PROFILE_DATA = {
     }
   ],
   projects: [
+    {
+      name: "Leetcode backend clone",
+      description:"",
+      technologies: ["Docker","Redis","R2/S3", "Vercel","Prisma","Typescript","Websockets"],
+      links: {
+        github: "https://github.com/ABDREHMAN6224/leetcode-clone/",
+        live: null
+      },
+      thumbnail: "leetc.jpeg",
+      images: [
+        "leetc.jpeg"   ]
+    },
     {
       name: "Gone But Never Forgotten",
       description: "A memorial site using Next.js, Clerk for auth, R2 for files, GoDaddy for domain, Nodemailer for mailing, and Vercel for hosting.",
