@@ -21,6 +21,14 @@ export const PROFILE_DATA = {
   },
   experience: [
     {
+      title: "Full Stack Engineer",
+      company: "BrainBox Automations",
+      duration: "Apr 2025 - Present",
+      description: [
+        "Working as a Full Stack Engineer at BrainBox Automations.",
+      ]
+    },
+    {
       title: "Full Stack Developer",
       company: "Infinity and Beyond",
       duration: "Oct 2024 - Jan 2025",
