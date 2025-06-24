@@ -5,6 +5,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,11 +80,12 @@ export default function Navbar() {
             
             <div className="ml-4 flex items-center gap-2">
               <ThemeToggle />
-              <Button
+              <Link
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full px-6 py-2 shadow-medium transition-all duration-300 hover:scale-105"
+                href="#contact"
               >
                 Hire Me
-              </Button>
+              </Link>
             </div>
           </div>
 
