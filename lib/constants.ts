@@ -16,7 +16,7 @@ export const PROFILE_DATA = {
   education: {
     degree: "B.Sc. in Computer Sciences",
     institution: "NUST",
-    cgpa: "3.97",
+    cgpa: "3.92",
     expected_graduation: "2026"
   },
   experience: [
@@ -103,6 +103,26 @@ export const PROFILE_DATA = {
         "nooru.png"   ]
     },
     {
+      name:"Wheel of Names",
+      description:"A fun web app to randomly select names from a list, with animated spinning and sound effects.",
+      technologies: ["React", "Tailwind CSS", "Framer Motion"],
+      thumbnail: "spin.png",
+      links: {
+        github: null,
+        live:"https://spin-names-funhouse.vercel.app/"
+      }
+    },
+    {
+      name:"ESIM Website",
+      description:"An Ecommerce website for ESIM, a company that provides electronic SIM cards.",
+      technologies: ["Next.js", "Tailwind CSS", "Shad cn","Paypal","Supabase","Esim go"],
+      thumbnail: "esim.png",
+      links: {
+        github: null,
+        live:"https://esim-website.vercel.app/"
+      }
+    },
+    {
       name: "Crop Connect",
       description: "Crop Connect is a one-stop solution for farmers, providing facilities for creating seller accounts, selling farming products, analyzing stores, accessing resources, and participating in community and private group chats.",
       technologies: ["NEXT.js", "NODE.js", "Socket.io", "Tailwind CSS"],
@@ -114,6 +134,16 @@ export const PROFILE_DATA = {
       images: [
         "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2940&auto=format&fit=crop"
       ]
+    },
+    {
+      name:"BeachSide Centralinc",
+      description:"Marketing website for BeachSide Centralinc.",
+      technologies: ["Next.js", "Tailwind CSS", "Shad cn"],
+      thumbnail: "beachside.png",
+      links: {
+        github: null,
+        live:"https://www.beachsidecentralinc.com/"
+      }
     },
     {
       name: "Github Driller",
