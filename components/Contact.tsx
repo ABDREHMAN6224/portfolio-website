@@ -1,12 +1,11 @@
 "use client";
-
+import React,{useState} from "react";
 import { motion } from "framer-motion";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import { useState } from "react";
-import { PROFILE_DATA } from "@/lib/constants";
+import { toast } from "@/hooks/use-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,9 +14,37 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `mailto:${PROFILE_DATA.profile.email}?subject=Contact from ${formData.name}&body=${formData.message}`;
+    const formData = new FormData(e.target);
+
+    formData.append("access_key", "a44d55e3-1e15-497a-aff6-a146edd03880");
+    formData.append("subject", `Contact from ${formData.get("name")}`);
+    formData.append("from", formData.get("email") as string);
+    formData.append("text", formData.get("message") as string);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const data = await response.json();
+
+    if (data.success) {
+      toast({
+        title: "Message Sent",
+        description: "Thank you for reaching out! I'll get back to you soon.",
+        variant: "success",
+      })
+      e.target.reset();
+    } else {
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+      console.log("Error", data);
+    }
+
   };
 
   return (
