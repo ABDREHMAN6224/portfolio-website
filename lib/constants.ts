@@ -188,7 +188,7 @@ export const PROFILE_DATA = {
     },
     {
       name: "DSA Visualizer",
-      description: "A comprehensive e-learning platform with video courses, interactive quizzes, and progress tracking.",
+      description: "A comprehensive e-learning platform for visualization of data structures and algorithms. It visualizes tress, heaps, graphs and sorting algorithms",
       technologies: ["React", "Node.js"],
       links: {
         github: "https://github.com/ABDREHMAN6224/dsa_project_final",
