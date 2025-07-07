@@ -195,7 +195,7 @@ export default function Experience() {
         >
           <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl border border-primary/10">
             <div className="text-3xl md:text-4xl font-bold text-gradient">
-              2+
+              {new Date().getFullYear() - new Date("2023-01-01").getFullYear()}+
             </div>
             <div className="text-left">
               <div className="font-semibold text-foreground">

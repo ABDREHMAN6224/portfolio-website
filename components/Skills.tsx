@@ -237,7 +237,7 @@ export default function Skills() {
           {[
             { label: "Technologies", value: PROFILE_DATA.skills.length + "+" },
             { label: "Projects", value: PROFILE_DATA.projects.length + "+" },
-            { label: "Years Experience", value: "2+" },
+            { label: "Years Experience", value: (new Date().getFullYear() - new Date("2023-01-01").getFullYear()) + " years" },
             { label: "Happy Clients", value: "10+" },
           ].map((stat, index) => (
             <motion.div
