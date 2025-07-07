@@ -1,7 +1,7 @@
 export const PROFILE_DATA = {
   profile: {
     name: "Abdul Rehman Memon",
-    email: "amemon.bscs22seecs@seecs.edu.pk",
+    email: "memonabdulrehman6224@gmail.com",
     phone: "+92316-0532576",
     linkedin: "https://www.linkedin.com/in/abdul-rehman-memon-9a908924b/",
     github: "https://github.com/ABDREHMAN6224",

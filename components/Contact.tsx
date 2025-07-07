@@ -42,7 +42,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     const formDataObj = new FormData(e.target as HTMLFormElement);
-    formDataObj.append("access_key", "a44d55e3-1e15-497a-aff6-a146edd03880");
+    formDataObj.append("access_key", "9b93ae1f-9339-4040-9412-2dad4f56b5ef");
     formDataObj.append("subject", `Contact from ${formDataObj.get("name")}`);
     formDataObj.append("from", formDataObj.get("email") as string);
     formDataObj.append("text", formDataObj.get("message") as string);
