@@ -31,7 +31,7 @@ export const PROFILE_DATA = {
     {
       title: "Full Stack Developer",
       company: "Infinity and Beyond",
-      duration: "Oct 2024 - Jan 2025",
+      duration: "Oct 2024 - March 2025",
       description: [
         "Working as a Full Stack Developer at Infinity and Beyond. Main technologies include Flask ,React ,Next.js, and S3, Postgres.",
 

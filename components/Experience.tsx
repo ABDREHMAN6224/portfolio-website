@@ -45,7 +45,6 @@ export default function Experience() {
       id="experience"
       ref={containerRef}
     >
-      {/* Background Elements */}
       <motion.div
         style={{ y }}
         className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-l from-green-400/10 to-blue-400/10 rounded-full blur-3xl"
@@ -56,7 +55,6 @@ export default function Experience() {
       />
 
       <div className="container-custom relative z-10">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +81,6 @@ export default function Experience() {
           </p>
         </motion.div>
 
-        {/* Timeline */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -91,7 +88,6 @@ export default function Experience() {
           viewport={{ once: true }}
           className="relative max-w-4xl mx-auto"
         >
-          {/* Timeline Line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 transform md:-translate-x-px"></div>
 
           {PROFILE_DATA.experience.map((exp, index) => (
@@ -102,12 +98,10 @@ export default function Experience() {
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
-              {/* Timeline Node */}
               <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transform -translate-x-2 md:-translate-x-2 z-10 shadow-medium">
                 <div className="absolute inset-1 bg-background rounded-full"></div>
               </div>
 
-              {/* Content Card */}
               <div
                 className={`w-full md:w-5/12 ml-12 md:ml-0 ${
                   index % 2 === 0 ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
@@ -118,7 +112,6 @@ export default function Experience() {
                   transition={{ duration: 0.3 }}
                 >
                   <Card className="bg-card/50 backdrop-blur-sm border-0 shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden group">
-                    {/* Card Header */}
                     <div className="p-6 pb-4">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
@@ -141,7 +134,6 @@ export default function Experience() {
                       </div>
                     </div>
 
-                    {/* Card Content */}
                     <CardContent className="pt-0 pb-6">
                       <ul className="space-y-3">
                         {exp.description.map((desc, i) => (
@@ -160,13 +152,11 @@ export default function Experience() {
                       </ul>
                     </CardContent>
 
-                    {/* Hover Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </Card>
                 </motion.div>
               </div>
 
-              {/* Date Badge for Desktop */}
               <div
                 className={`hidden md:block absolute top-4 ${
                   index % 2 === 0 ? "right-4" : "left-4"
@@ -186,7 +176,6 @@ export default function Experience() {
           ))}
         </motion.div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
