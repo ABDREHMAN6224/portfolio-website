@@ -5,7 +5,7 @@ export const PROFILE_DATA = {
     phone: "+92316-0532576",
     linkedin: "https://www.linkedin.com/in/abdul-rehman-memon-9a908924b/",
     github: "https://github.com/ABDREHMAN6224",
-    avatar: "profile.jpeg",
+    avatar: "profile.png",
     summary: "Full Stack developer confident with Next, MERN, S3, Redux, SQL, Django, Cypress and other web technologies along with experience in AI/ML; collaborating using git. Experienced with scraping complete databases through websites, and open APIs. Passionate about Cloud Infrastructure and LLMs."
   },
   skills: [
