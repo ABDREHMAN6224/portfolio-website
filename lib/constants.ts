@@ -67,6 +67,18 @@ export const PROFILE_DATA = {
   ],
   projects: [
     {
+      name: "Interpreter",
+      description:"",
+      technologies: ["Go lang"],
+      links: {
+        github: "https://github.com/ABDREHMAN6224/interpreter",
+        live: null
+      },
+      thumbnail: "interpreter.jpeg",
+      images: [
+        "interpreter.jpeg"   ]
+    },
+    {
       name: "Leetcode backend clone",
       description:"",
       technologies: ["Docker","Redis","R2/S3", "Vercel","Prisma","Typescript","Websockets"],
