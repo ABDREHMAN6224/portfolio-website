@@ -95,8 +95,8 @@ export const PROFILE_DATA = {
       description: "A memorial site using Next.js, Clerk for auth, R2 for files, GoDaddy for domain, Nodemailer for mailing, and Vercel for hosting.",
       technologies: ["Next.js", "Clerk", "R2/S3", "Nodemailer", "Vercel","Prisma","Redux","Typescript","Shad cn"],
       links: {
-        github: null,
-        live: "https://gonebut-neverforgotten.com/"
+        github: "https://github.com/ABDREHMAN6224/fiverr-1",
+        live: null
       },
       thumbnail: "goneBut.png",
       images: [
@@ -130,7 +130,7 @@ export const PROFILE_DATA = {
       technologies: ["Next.js", "Tailwind CSS", "Shad cn","Paypal","Supabase","Esim go"],
       thumbnail: "esim.png",
       links: {
-        github: null,
+        github: "https://github.com/ABDREHMAN6224/esim-website",
         live:"https://esim-website.vercel.app/"
       }
     },
