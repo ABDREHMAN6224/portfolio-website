@@ -144,7 +144,7 @@ export default function Hero() {
               >
                 <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 <span className="text-xl md:text-2xl text-muted-foreground font-medium">
-                  Full Stack Developer
+                  Software Engineer
                 </span>
                 <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
               </motion.div>
