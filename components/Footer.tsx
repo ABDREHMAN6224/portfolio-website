@@ -56,12 +56,7 @@ export default function Footer() {
 								and building scalable applications with modern technologies.
 							</p>
 
-							<div className="flex items-center justify-center sm:justify-start gap-2 text-xs sm:text-sm md:text-sm text-muted-foreground">
-								<span>Made with</span>
-								<Heart className="w-3 h-3 sm:w-4 sm:h-4 md:w-4 md:h-4 text-red-500 fill-current" />
-								<span className="hidden xs:inline md:inline">using Next.js & Tailwind CSS</span>
-								<span className="xs:hidden md:hidden">with ❤️</span>
-							</div>
+							
 						</motion.div>
 
 						{/* Quick Links */}

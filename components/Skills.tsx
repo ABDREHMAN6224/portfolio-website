@@ -232,13 +232,12 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
+          className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16"
         >
           {[
             { label: "Technologies", value: PROFILE_DATA.skills.length + "+" },
             { label: "Projects", value: PROFILE_DATA.projects.length + "+" },
             { label: "Years Experience", value: (new Date().getFullYear() - new Date("2023-01-01").getFullYear()) + " years" },
-            { label: "Happy Clients", value: "10+" },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

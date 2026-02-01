@@ -52,7 +52,7 @@ export default function Hero() {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = `/updated_cv.pdf`;
+    link.href = `/cv.pdf`;
     link.download = `${profile.name}_Resume.pdf`;
     link.style.display = 'none';
     link.target = '_blank';
