@@ -7,15 +7,50 @@ export const PROFILE_DATA = {
     github: "https://github.com/ABDREHMAN6224",
     website: "https://portfolio-website-arm.vercel.app",
     avatar: "profile.jpeg",
-    summary: "Passionate Full Stack Developer with expertise in MERN, Next.js, AWS, and AI/ML. Experienced in building scalable web applications, integrating AI solutions, and collaborating using Git. Seeking to leverage my skills in cloud infrastructure and large language models to contribute to innovative projects at a leading tech company."
+    title: "Software Engineer",
+    headline: "I build production-grade web platforms, backend systems, and AI-agent workflows — shipped fast, designed to scale.",
+    summary:
+      "Software Engineer focused on backend systems, AI engineering, and high-quality product delivery. I build scalable web applications with Next.js/React, design robust APIs and distributed services (Node.js/Go/Python), and ship cloud-native infrastructure on AWS. Recently, I’ve been working on AI agents and LLM-powered features (RAG, orchestration, tool use) to automate workflows and unlock product capabilities."
   },
   skills: [
-    "Next.js", "React.js", "Redux Toolkit", "TypeScript", "Tailwind CSS", "Material-UI", "Framer Motion",
-    "Node.js", "Express.js", "Prisma ORM", "WebSockets", "RESTful APIs", "Go",
-    "PostgreSQL", "MongoDB", "MySQL", "Redis", "Supabase",
-    "AWS (EC2, S3, Lambda, RDS, DynamoDB, SQS, SES, API Gateway)", "Docker", "CI/CD", "Vercel", "CDK",
-    "LLMs", "RAG Architecture", "OpenAI API", "Jest", "Cypress", "Git/GitHub",
-    "Sanity CMS", "WebRTC", "Socket.io", "Nodemailer"
+    "Next.js",
+    "React.js",
+    "Redux Toolkit",
+    "TypeScript",
+    "Tailwind CSS",
+    "Material-UI",
+    "Framer Motion",
+    "Node.js",
+    "Express.js",
+    "Python",
+    "Django",
+    "Django REST Framework (DRF)",
+    "Prisma ORM",
+    "RESTful APIs",
+    "WebSockets",
+    "Go",
+    "PostgreSQL",
+    "MongoDB",
+    "MySQL",
+    "Redis",
+    "Supabase",
+    "AWS (EC2, S3, Lambda, RDS, DynamoDB, SQS, SES, API Gateway)",
+    "Docker",
+    "CI/CD",
+    "Vercel",
+    "CDK",
+    "LLMs",
+    "RAG",
+    "AI Agents",
+    "LangGraph",
+    "OpenAI API",
+    "Jest",
+    "Cypress",
+    "Git/GitHub",
+    "Sanity CMS",
+    "WebRTC",
+    "Socket.io",
+    "Nodemailer"
   ],
   education: {
     degree: "B.Sc. in Computer Sciences",
@@ -29,9 +64,10 @@ export const PROFILE_DATA = {
       company: "Alfabolt",
       duration: "Dec 2025 - Present",
       description: [
-        "Led development of an internal sales automation tool to streamline lead tracking and outreach",
-        "Built and maintained web scrapers for platforms like Wellfound and Y Combinator to extract startup and company data",
-        "Worked on multiple client projects, collaborating closely with stakeholders to deliver features end-to-end"
+        "Built backend services and internal platforms to streamline sales, lead enrichment, and outreach workflows",
+        "Developed and maintained production web scrapers (Wellfound, Y Combinator, and more) to extract and normalize company/startup intelligence",
+        "Worked on AI-agent workflows to automate research, enrichment, and task execution across internal tools",
+        "Delivered multiple client projects end-to-end: requirements → implementation → deployment, with close stakeholder collaboration"
       ]
     },
     {
@@ -51,8 +87,8 @@ export const PROFILE_DATA = {
       company: "Infinity and Beyond",
       duration: "Oct 2024 - March 2025",
       description: [
-        "Working as a Full Stack Developer at Infinity and Beyond. Main technologies include Flask ,React ,Next.js, and S3, Postgres.",
-
+        "Built and shipped full-stack features using Flask, React/Next.js, PostgreSQL, and S3-based storage",
+        "Collaborated with the team to deliver reliable product increments, focusing on clean APIs, UX quality, and maintainable code"
       ]
     },
     {
@@ -76,6 +112,18 @@ export const PROFILE_DATA = {
     }
   ],
   projects: [
+    {
+      name: "ClaimBrite",
+      description:
+        "AI-powered mediation platform (built at Alfabolt) that streamlines dispute-resolution workflows. As a Backend + AI Engineer, I shipped core backend services/APIs and integrated LLM-powered guidance (RAG + orchestration) to help users move through mediation flows faster with clarity and trust.",
+      technologies: ["Next.js", "TypeScript", "Node.js", "AWS", "LLMs", "RAG", "AI Agents"],
+      links: {
+        github: null,
+        live: "https://claimbrite.com"
+      },
+      thumbnail: "claimbrite.png",
+      images: ["claimbrite.png"]
+    },
     {
       name: "AST-Based Interpreter in Go",
       description: "Built a custom interpreter in Go using an Abstract Syntax Tree (AST) for parsing and semantic analysis. Implemented lexical analysis, recursive descent parsing, and AST traversal. Designed symbol tables and type-checking mechanisms to ensure correctness and extensibility.",

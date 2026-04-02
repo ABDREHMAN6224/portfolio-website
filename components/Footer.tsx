@@ -52,8 +52,7 @@ export default function Footer() {
 							</div>
 
 							<p className="text-sm sm:text-base md:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-md mx-auto sm:mx-0">
-								Software Engineer passionate about creating innovative solutions
-								and building scalable applications with modern technologies.
+								{profile.title ?? "Software Engineer"} building scalable backend systems, cloud infrastructure, and AI-agent workflows.
 							</p>
 
 							

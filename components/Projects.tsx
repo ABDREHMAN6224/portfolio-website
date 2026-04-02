@@ -76,8 +76,7 @@ export default function Projects() {
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            A collection of projects that showcase my skills in full-stack development, 
-            from web applications to AI/ML implementations.
+            Selected projects across full-stack engineering, backend systems, and AI-powered product features.
           </p>
         </motion.div>
 
@@ -97,7 +96,7 @@ export default function Projects() {
               onHoverEnd={() => setHoveredProject(null)}
               className="group"
             >
-              <Card className="relative h-full overflow-hidden bg-card/50 backdrop-blur-sm border-0 shadow-soft hover:shadow-large transition-all duration-500 hover:-translate-y-2">
+              <Card className="relative h-full overflow-hidden bg-card/70 dark:bg-card/50 backdrop-blur-sm border border-border/60 shadow-soft hover:shadow-large transition-all duration-500 hover:-translate-y-2 hover:border-primary/30 hover:ring-1 hover:ring-primary/20">
                 {/* Project Image */}
                 <div className="relative aspect-video overflow-hidden">
                   <Image
@@ -108,7 +107,7 @@ export default function Projects() {
                   />
                   
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
                   
                   {/* Action Buttons */}
                   <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -216,7 +215,7 @@ export default function Projects() {
                 </CardContent>
 
                 {/* Hover Effect Border */}
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl" />
+                <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10 blur-2xl" />
               </Card>
             </motion.div>
           ))}

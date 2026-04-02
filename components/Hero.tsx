@@ -108,23 +108,19 @@ export default function Hero() {
             className="relative mx-auto mb-8 group"
           >
             <div className="relative w-48 h-48 mx-auto">
-              {/* Gradient Ring */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full p-1 group-hover:animate-pulse">
-                <div className="w-full h-full bg-background rounded-full p-2">
-                  <div className="relative w-full h-full rounded-full overflow-hidden">
-                    <Image
-                      src={`/${profile.avatar}`}
-                      alt={profile.name}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      priority
-                    />
-                  </div>
-                </div>
+              {/* Clean Image (no padded white circle) */}
+              <div className="relative w-full h-full rounded-full overflow-hidden ring-2 ring-primary/20 shadow-large group-hover:ring-primary/35 transition-all duration-500">
+                <Image
+                  src={`/${profile.avatar}`}
+                  alt={profile.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
               </div>
-              
-              {/* Status Indicator */}
-              <div className="absolute bottom-4 right-4 w-6 h-6 bg-green-500 rounded-full border-4 border-background animate-pulse"></div>
+
+              {/* Subtle Status Indicator */}
+              <div className="absolute bottom-3 right-3 w-4 h-4 bg-emerald-500 rounded-full ring-4 ring-background shadow-medium animate-pulse"></div>
             </div>
           </motion.div>
 
@@ -144,11 +140,20 @@ export default function Hero() {
               >
                 <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 <span className="text-xl md:text-2xl text-muted-foreground font-medium">
-                  Software Engineer
+                  {profile.title ?? "Software Engineer"}
                 </span>
                 <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
               </motion.div>
             </div>
+
+            {profile.headline && (
+              <motion.p
+                variants={itemVariants}
+                className="text-base md:text-lg text-foreground/80 max-w-4xl mx-auto leading-relaxed"
+              >
+                {profile.headline}
+              </motion.p>
+            )}
 
             <motion.p
               variants={itemVariants}
