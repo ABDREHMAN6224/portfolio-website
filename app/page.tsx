@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <main className="pt-16">
       <Hero />
-      <Education />
       <Experience />
       <Skills />
       <Projects />
+      <Education />
       <Contact />
     </main>
   );
