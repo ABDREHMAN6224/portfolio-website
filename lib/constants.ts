@@ -113,6 +113,17 @@ export const PROFILE_DATA = {
   ],
   projects: [
     {
+      name:"HireAble",
+      description:"HireAble has two sides: HireAble Practice app for mock interviews, where candidates prepare for upcoming interviews through realtime voice-based interviews, get structured feedback and scores, track progress, and even request new interview templates to be added to the platform; and HireAble for companies, where hiring teams run faster, more consistent screening with job-aligned interview plans, a shared pipeline for candidates and invites, and clear outcomes—so they reduce manual triage, improve comparability, and keep everyone aligned in one dashboard. Interviews are conduncted using our multi agent system that orchestrates LLM agents to handle interview flow, question delivery, candidate responses, and feedback generation.",
+      technologies: ["Next.js", "Node.js", "AWS", "LLMs", "RAG", "AI Agents","Deepgram", "Livekit", "Typescript","Supabase"],
+      links: {
+        github: null,
+        live: "https://hireableai.dev"
+      },
+      thumbnail: "hireable.png",
+      images: ["hireable.png"]
+    },
+    {
       name: "ClaimBrite",
       description:
         "AI-powered mediation platform (built at Alfabolt) that streamlines dispute-resolution workflows. As a Backend + AI Engineer, I shipped core backend services/APIs and integrated LLM-powered guidance (RAG + orchestration) to help users move through mediation flows faster with clarity and trust.",
