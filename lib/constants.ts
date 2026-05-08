@@ -125,16 +125,16 @@ export const PROFILE_DATA = {
       images: ["claimbrite.png"]
     },
     {
-      name: "AST-Based Interpreter in Go",
-      description: "Built a custom interpreter in Go using an Abstract Syntax Tree (AST) for parsing and semantic analysis. Implemented lexical analysis, recursive descent parsing, and AST traversal. Designed symbol tables and type-checking mechanisms to ensure correctness and extensibility.",
+      name: "Compiler in Go",
+      description: "Built an end-to-end C-like language compiler and stack-based virtual machine in Go, implementing a full pipeline from lexing and Pratt-style parsing into an AST through bytecode compilation (symbol tables, scoping, constants pool, and jump backpatching) and a stack VM runtime (operand stack, globals store, call frames, built-in functions like printf). Delivered a working CLI/REPL toolchain that supports core C-style constructs (functions, conditionals, loops, switch, arrays) and executes programs by compiling them into a serializable bytecode format and running them on the custom VM.",
       technologies: ["Go"],
       links: {
-        github: "https://github.com/ABDREHMAN6224/interpreter",
+        github: "https://github.com/ABDREHMAN6224/Compiler",
         live: null
       },
-      thumbnail: "interpreter.jpeg",
+      thumbnail: "compiler.png",
       images: [
-        "interpreter.jpeg"
+        "compiler.png"
       ]
     },
     {
