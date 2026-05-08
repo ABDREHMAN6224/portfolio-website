@@ -10,7 +10,7 @@ import { useRef, useState } from "react";
 
 export default function Projects() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [expandedProjects, setExpandedProjects] = useState<Set<number>>(() => new Set());
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -39,6 +39,15 @@ export default function Projects() {
         ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
+  };
+
+  const toggleProjectExpanded = (index: number) => {
+    setExpandedProjects((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) next.delete(index);
+      else next.add(index);
+      return next;
+    });
   };
 
   return (
@@ -92,8 +101,6 @@ export default function Projects() {
             <motion.div
               key={project.name}
               variants={itemVariants}
-              onHoverStart={() => setHoveredProject(index)}
-              onHoverEnd={() => setHoveredProject(null)}
               className="group"
             >
               <Card className="relative h-full overflow-hidden bg-card/70 dark:bg-card/50 backdrop-blur-sm border border-border/60 shadow-soft hover:shadow-large transition-all duration-500 hover:-translate-y-2 hover:border-primary/30 hover:ring-1 hover:ring-primary/20">
@@ -188,7 +195,7 @@ export default function Projects() {
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                    {(expandedProjects.has(index) ? project.technologies : project.technologies.slice(0, 4)).map((tech, techIndex) => (
                       <motion.div
                         key={tech}
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -207,9 +214,21 @@ export default function Projects() {
                     ))}
                     
                     {project.technologies.length > 4 && (
-                      <Badge variant="outline" className="text-muted-foreground">
-                        +{project.technologies.length - 4} more
-                      </Badge>
+                      <button
+                        type="button"
+                        onClick={() => toggleProjectExpanded(index)}
+                        aria-expanded={expandedProjects.has(index)}
+                        className="inline-flex"
+                      >
+                        <Badge
+                          variant="outline"
+                          className="text-muted-foreground hover:text-foreground hover:border-primary/40 hover:bg-muted/50 transition-colors"
+                        >
+                          {expandedProjects.has(index)
+                            ? "Show less"
+                            : `+${project.technologies.length - 4} more`}
+                        </Badge>
+                      </button>
                     )}
                   </div>
                 </CardContent>

@@ -56,7 +56,7 @@ export const PROFILE_DATA = {
     degree: "B.Sc. in Computer Sciences",
     institution: "NUST",
     cgpa: "3.92",
-    expected_graduation: "2026"
+    expected_graduation: "May 2026"
   },
   experience: [
     {

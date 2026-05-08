@@ -124,7 +124,7 @@ export default function Education() {
                         </div>
                         <div>
                           <div className="text-sm text-muted-foreground">
-                            Expected Graduation
+                            Graduation
                           </div>
                           <div className="text-2xl font-bold text-gradient">
                             {education.expected_graduation}
