@@ -1,0 +1,22 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Next exports generated images without a file extension; make sure they're served as PNG.
+[[headers]]
+  for = "/opengraph-image"
+  [headers.values]
+    Content-Type = "image/png"
+
+[[headers]]
+  for = "/icon"
+  [headers.values]
+    Content-Type = "image/png"
+
+[[headers]]
+  for = "/apple-icon"
+  [headers.values]
+    Content-Type = "image/png"
