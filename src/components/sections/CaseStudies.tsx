@@ -11,6 +11,7 @@ const accentMix = (pct: number) => `color-mix(in oklab, var(--color-accent) ${pc
 
 // One decorative visual per case study, keyed by name. Anything without a match gets the pipeline.
 const visuals: Record<string, { label: string; Visual: (p: { animate: boolean }) => React.ReactNode }> = {
+  Alexein: { label: "Memory layer", Visual: MemoryVisual },
   "Peak Energy": { label: "AI pipeline", Visual: PipelineVisual },
   ClaimBrite: { label: "Agent graph", Visual: AgentGraphVisual },
 };
@@ -26,7 +27,7 @@ export default function CaseStudies() {
             Work running in <Accent>production</Accent>
           </>
         }
-        lede="Two AI products I built as an engineer at Alfabolt, taken from design through to production."
+        lede="Alexein, where I work now, and two AI products I built as an engineer at Alfabolt, taken from design through to production."
       />
 
       <div className="space-y-6 sm:space-y-8">
@@ -112,6 +113,29 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
             {study.name}
           </h3>
           <p className="mt-2 text-lg text-muted">{study.tagline}</p>
+
+          {study.products && (
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2" aria-label={`${study.name} products`}>
+              {study.products.map((p) => (
+                <li key={p.name} className="rounded-xl border border-line bg-bg/40 p-4">
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/prod inline-flex items-center gap-1 text-[15px] font-medium text-fg transition-colors hover:text-accent"
+                  >
+                    {p.name}
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="size-3.5 text-subtle transition-all duration-300 group-hover/prod:-translate-y-0.5 group-hover/prod:translate-x-0.5 group-hover/prod:text-accent"
+                    />
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{p.body}</p>
+                </li>
+              ))}
+            </ul>
+          )}
 
           {study.metric && (
             <div className="mt-10 lg:mt-auto lg:pt-12">
@@ -210,7 +234,8 @@ function VisitLink({ url, name, className }: { url: string; name: string; classN
  * per edge, only while the card is on screen and never under reduced motion.
  * ------------------------------------------------------------------------------------------- */
 
-type Edge = { d: string; delay: number; duration?: number };
+/** `cycle`, when set, is the full repeat period, so pulses with different durations stay in sync. */
+type Edge = { d: string; delay: number; duration?: number; cycle?: number };
 
 function Pulse({ edge, animate }: { edge: Edge; animate: boolean }) {
   if (!animate) return null;
@@ -227,7 +252,7 @@ function Pulse({ edge, animate }: { edge: Edge; animate: boolean }) {
         duration: edge.duration ?? 1.6,
         delay: edge.delay,
         repeat: Infinity,
-        repeatDelay: 1.4,
+        repeatDelay: edge.cycle ? edge.cycle - (edge.duration ?? 1.6) : 1.4,
         ease: [0.45, 0, 0.55, 1],
       }}
       style={{ filter: `drop-shadow(0 0 4px ${accentMix(80)})` }}
@@ -242,6 +267,8 @@ function Node({
   h = 30,
   label,
   active,
+  fontSize = 10,
+  radius = 8,
 }: {
   x: number;
   y: number;
@@ -249,6 +276,8 @@ function Node({
   h?: number;
   label: string;
   active?: boolean;
+  fontSize?: number;
+  radius?: number;
 }) {
   return (
     <g>
@@ -257,16 +286,16 @@ function Node({
         y={y - h / 2}
         width={w}
         height={h}
-        rx={8}
+        rx={radius}
         className={active ? "fill-surface-2 stroke-accent/70" : "fill-surface-2 stroke-line-strong"}
         strokeWidth={1}
       />
       <text
         x={x}
-        y={y + 3.5}
+        y={y + fontSize * 0.35}
         textAnchor="middle"
         className={clsx("font-mono", active ? "fill-accent" : "fill-muted")}
-        style={{ fontSize: 10, letterSpacing: "0.04em" }}
+        style={{ fontSize, letterSpacing: "0.04em" }}
       >
         {label}
       </text>
@@ -275,59 +304,59 @@ function Node({
 }
 
 function PipelineVisual({ animate }: { animate: boolean }) {
-  // input → extract → LLM → validate → output, with a retry loop back into the model stage.
-  const y = 112;
-  const IN = 18;
-  const OUT = 402;
-  const stages = [
-    { x: 112, w: 72, label: "extract" },
-    { x: 210, w: 56, label: "llm", active: true },
-    { x: 308, w: 76, label: "validate" },
-  ];
-  const stops = [
-    { l: IN + 6, r: IN + 6 },
-    ...stages.map((s) => ({ l: s.x - s.w / 2, r: s.x + s.w / 2 })),
-    { l: OUT - 6, r: OUT - 6 },
-  ];
-  const edges: Edge[] = stops.slice(0, -1).map((s, i) => ({
-    d: `M${s.r} ${y} H${stops[i + 1].l}`,
-    delay: i * 0.5,
-    duration: 0.7,
-  }));
-  const loop: Edge = { d: `M308 ${y + 15} V${y + 50} H210 V${y + 15}`, delay: 2.4, duration: 1.2 };
-  const lanes = [y - 62, y - 44];
+  // input fans out to parallel extract branches; each branch runs several LLM stages in parallel
+  // (catalog and others); one final LLM merges every stage's output, joining all branches.
+  const y = 110;
+  const IN = 16;
+  const OUT = 404;
+  const CYCLE = 3.6; // every pulse shares one period so the waves stay in step
+  const ext = { x: 80, w: 58, h: 24 };
+  const llm = { x: 196, w: 60, h: 15 };
+  const merge = { x: 318, w: 72, h: 30 };
+  const branches = [y - 66, y, y + 66];
+  const stageOffsets = [-19, 0, 19];
+  const stageLabels = ["catalog", "llm", "llm"];
+
+  const curve = (ax: number, ay: number, bx: number, by: number) => {
+    const mx = (ax + bx) / 2;
+    return `M${ax} ${ay} C${mx} ${ay} ${mx} ${by} ${bx} ${by}`;
+  };
+  const edge = (d: string, delay: number, duration: number): Edge => ({ d, delay, duration, cycle: CYCLE });
+
+  const fanOut = branches.map((by) => edge(curve(IN + 5, y, ext.x - ext.w / 2, by), 0, 0.6));
+  const toStages = branches.flatMap((by) =>
+    stageOffsets.map((o) => edge(curve(ext.x + ext.w / 2, by, llm.x - llm.w / 2, by + o), 0.6, 0.55)),
+  );
+  const toMerge = branches.flatMap((by) =>
+    stageOffsets.map((o) => edge(curve(llm.x + llm.w / 2, by + o, merge.x - merge.w / 2, y), 1.25, 0.8)),
+  );
+  const out = edge(`M${merge.x + merge.w / 2} ${y} H${OUT - 6}`, 2.15, 0.5);
+  const edges = [...fanOut, ...toStages, ...toMerge, out];
 
   return (
     <svg viewBox="0 0 420 220" className="h-auto w-full max-w-[460px]" aria-hidden="true" focusable="false">
-      {/* Faint data lanes above the pipeline */}
-      {lanes.map((ly, i) => (
-        <g key={ly}>
-          <line x1={8} x2={412} y1={ly} y2={ly} className="stroke-line" strokeDasharray="2 5" />
-          {[0, 1, 2, 3, 4, 5, 6].map((k) => (
-            <rect
-              key={k}
-              x={20 + k * 56 + i * 22}
-              y={ly - 2}
-              width={k % 3 === 0 ? 18 : 10}
-              height={4}
-              rx={2}
-              className={k === 3 && i === 0 ? "fill-accent/60" : "fill-line-strong"}
-            />
-          ))}
-        </g>
-      ))}
+      {/* Parallel region */}
+      <rect
+        x={ext.x - ext.w / 2 - 10}
+        y={6}
+        width={llm.x + llm.w / 2 - (ext.x - ext.w / 2) + 20}
+        height={208}
+        rx={12}
+        className="stroke-line"
+        strokeDasharray="2 5"
+        fill="none"
+      />
+      <text x={ext.x - ext.w / 2 - 2} y={214} className="fill-subtle font-mono" style={{ fontSize: 8 }}>
+        <tspan dx={4} dy={-5}>parallel</tspan>
+      </text>
 
       {/* Edges */}
       {edges.map((e) => (
         <path key={e.d} d={e.d} className="stroke-line-strong" strokeWidth={1} fill="none" />
       ))}
-      <path d={loop.d} className="stroke-line-strong" strokeWidth={1} strokeDasharray="3 4" fill="none" />
-      <text x={259} y={y + 64} textAnchor="middle" className="fill-subtle font-mono" style={{ fontSize: 9 }}>
-        retry
-      </text>
 
       {/* Pulses */}
-      {[...edges, loop].map((e) => (
+      {edges.map((e) => (
         <Pulse key={`p-${e.d}`} edge={e} animate={animate} />
       ))}
 
@@ -341,11 +370,84 @@ function PipelineVisual({ animate }: { animate: boolean }) {
         output
       </text>
 
-      {/* Stages */}
-      {stages.map((s) => (
-        <Node key={s.label} x={s.x} y={y} w={s.w} label={s.label} active={s.active} />
+      {/* Branches: extract → parallel LLM stages */}
+      {branches.map((by) => (
+        <g key={by}>
+          <Node x={ext.x} y={by} w={ext.w} h={ext.h} label="extract" fontSize={9} />
+          {stageOffsets.map((o, i) => (
+            <Node key={o} x={llm.x} y={by + o} w={llm.w} h={llm.h} label={stageLabels[i]} fontSize={8} radius={5} />
+          ))}
+        </g>
       ))}
-      <circle cx={210} cy={y - 15} r={2.5} className="fill-accent" />
+
+      {/* Merge */}
+      <Node x={merge.x} y={y} w={merge.w} h={merge.h} label="llm·merge" active />
+      <circle cx={merge.x} cy={y - merge.h / 2} r={2.5} className="fill-accent" />
+    </svg>
+  );
+}
+
+function MemoryVisual({ animate }: { animate: boolean }) {
+  // Sources save into one memory layer; both products recall from it.
+  const mem = { x: 206, y: 110, w: 84, h: 34 };
+  const CYCLE = 3.2;
+  const sources = [
+    { y: 48, label: "chats" },
+    { y: 110, label: "email" },
+    { y: 172, label: "docs" },
+  ];
+  const products = [
+    { y: 72, label: "my memory" },
+    { y: 148, label: "dev platform" },
+  ];
+  const src = { x: 62, w: 58 };
+  const prod = { x: 352, w: 88 };
+  const curve = (ax: number, ay: number, bx: number, by: number) => {
+    const mx = (ax + bx) / 2;
+    return `M${ax} ${ay} C${mx} ${ay} ${mx} ${by} ${bx} ${by}`;
+  };
+  const saves: Edge[] = sources.map((s, i) => ({
+    d: curve(src.x + src.w / 2, s.y, mem.x - mem.w / 2, mem.y),
+    delay: i * 0.12,
+    duration: 0.9,
+    cycle: CYCLE,
+  }));
+  const recalls: Edge[] = products.map((p, i) => ({
+    d: curve(mem.x + mem.w / 2, mem.y, prod.x - prod.w / 2, p.y),
+    delay: 1.2 + i * 0.12,
+    duration: 0.9,
+    cycle: CYCLE,
+  }));
+  const edges = [...saves, ...recalls];
+
+  return (
+    <svg viewBox="0 0 420 220" className="h-auto w-full max-w-[460px]" aria-hidden="true" focusable="false">
+      {/* Memory rings */}
+      <circle cx={mem.x} cy={mem.y} r={72} className="stroke-line" strokeDasharray="2 5" fill="none" />
+      <circle cx={mem.x} cy={mem.y} r={50} className="stroke-accent/15" fill="none" />
+
+      {edges.map((e) => (
+        <path key={e.d} d={e.d} className="stroke-line-strong" strokeWidth={1} fill="none" />
+      ))}
+      {edges.map((e) => (
+        <Pulse key={`p-${e.d}`} edge={e} animate={animate} />
+      ))}
+
+      <text x={118} y={206} textAnchor="middle" className="fill-subtle font-mono" style={{ fontSize: 8.5 }}>
+        save
+      </text>
+      <text x={290} y={206} textAnchor="middle" className="fill-subtle font-mono" style={{ fontSize: 8.5 }}>
+        recall
+      </text>
+
+      {sources.map((s) => (
+        <Node key={s.label} x={src.x} y={s.y} w={src.w} h={26} label={s.label} fontSize={9} />
+      ))}
+      {products.map((p) => (
+        <Node key={p.label} x={prod.x} y={p.y} w={prod.w} h={28} label={p.label} fontSize={9} />
+      ))}
+      <Node x={mem.x} y={mem.y} w={mem.w} h={mem.h} label="memory" active />
+      <circle cx={mem.x} cy={mem.y - mem.h / 2} r={2.5} className="fill-accent" />
     </svg>
   );
 }

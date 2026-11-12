@@ -131,11 +131,39 @@ export type CaseStudy = {
   solution: string;
   impact: string;
   metric?: { value: string; label: string };
+  /** Optional named products, listed under the tagline. */
+  products?: { name: string; url: string; body: string }[];
   stack: string[];
 };
 
-// Products I built as a software engineer at Alfabolt, shown above the project grid.
+// Work running in production: Alexein (current), then products built at Alfabolt. Shown above the project grid.
 export const caseStudies: CaseStudy[] = [
+  {
+    name: "Alexein",
+    tagline: "Memory for AI agents and the people using them",
+    url: "https://www.alexein.ai",
+    context: "Alexein AI · Current",
+    problem:
+      "Agents lose context between sessions, so they reread old threads, repeat work and burn tokens. Every new tool starts from zero.",
+    solution:
+      "A memory layer that keeps what matters from conversations and work, and gives agents that context across sessions and tools. I work on the memory architecture and agentic systems, and own the backend behind both products.",
+    impact:
+      "94.6% on LoCoMo, and the same GPT-4.1-mini model goes from 36.0 to 94.0 on MemoryAgentBench fact consolidation once it has Alexein's memory (published benchmarks).",
+    metric: { value: "94.6%", label: "LoCoMo accuracy" },
+    products: [
+      {
+        name: "My memory",
+        url: "https://memory.alexein.ai",
+        body: "One personal memory shared by Claude, ChatGPT, coding agents and the desktop app. Private to its owner, no code needed.",
+      },
+      {
+        name: "Developer platform",
+        url: "https://docs.alexein.ai",
+        body: "An API with Python, TypeScript and Go SDKs and a hosted MCP server, giving every user of an app their own memory.",
+      },
+    ],
+    stack: ["Memory Architectures", "Agentic AI", "LLMs", "Python", "MCP"],
+  },
   {
     name: "Peak Energy",
     tagline: "AI pipeline for energy operations",
@@ -144,7 +172,7 @@ export const caseStudies: CaseStudy[] = [
     problem:
       "Much of the day-to-day operational workflow was manual and repetitive, which limited how far operations could scale.",
     solution:
-      "Designed and built the AI pipeline that automates that workflow, then kept extending the platform as a full-stack engineer.",
+      "Designed and built a parallel AI pipeline: inputs are extracted in parallel, each extract runs through several LLM stages at once (catalog and others), and a final LLM merges every stage's output into one result. Then kept extending the platform as a full-stack engineer.",
     impact: "Cut the manual work in that workflow by roughly 95%.",
     metric: { value: "~95%", label: "less manual work" },
     stack: ["LLMs", "Python", "Next.js", "AWS"],
