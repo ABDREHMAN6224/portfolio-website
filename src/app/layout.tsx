@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: `%s | ${profile.name}`,
   },
   description,
-  keywords: ["Full Stack Engineer", "AI Engineer", "Next.js", "LangGraph", "AWS", "Go", "Abdul Rehman Memon"],
+  keywords: ["Software Engineer", "Backend", "Distributed Systems", "AI Systems", "Cloud Infrastructure", "Go", "TypeScript", "AWS", "Abdul Rehman Memon"],
   authors: [{ name: profile.name, url: profile.website }],
   openGraph: {
     type: "website",
@@ -53,7 +53,7 @@ const personJsonLd = {
   alumniOf: { "@type": "CollegeOrUniversity", name: education.school },
   award: `${education.honor}, NUST`,
   ...(currentRole && { worksFor: { "@type": "Organization", name: currentRole.company } }),
-  knowsAbout: ["Full-stack development", "AI engineering", "LangGraph", "Next.js", "TypeScript", "Go", "AWS"],
+  knowsAbout: ["Software engineering", "Backend engineering", "Distributed systems", "AI systems", "Agentic AI", "Cloud infrastructure", "Go", "TypeScript", "AWS"],
 };
 
 export const viewport: Viewport = {

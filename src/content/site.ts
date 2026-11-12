@@ -4,20 +4,20 @@ export const profile = {
   name: "Abdul Rehman Memon",
   shortName: "Abdul Rehman",
   initials: "AR",
-  role: "Full Stack & AI Engineer",
+  role: "Software Engineer",
   location: "Islamabad, Pakistan",
   /** Optional "open to roles" pill; leave empty to hide it everywhere. */
   availability: "",
   /** Short distinction shown as the hero badge and on the OG image. */
   distinction: "President's Gold Medalist · NUST",
-  headline: "I build production AI systems and the full-stack products around them.",
+  headline: "I engineer backend and AI systems, from first design to production.",
   /** Phrase inside `headline` rendered as the serif-italic accent in the hero. */
-  headlineAccent: "AI systems",
+  headlineAccent: "backend and AI systems",
   /** Shorter hero version of `summary`. */
   intro:
-    "Full-stack engineer across Next.js, Node, Go and AWS. I take products from architecture to production: LangGraph agents, AI pipelines, serverless backends, and the interfaces people use them through.",
+    "Software engineer at Alexein AI, working on agentic AI, memory architectures and the backend they run on. Before that I built AI products and cloud infrastructure at Alfabolt and BrainBox Automations, owning systems from architecture to production support.",
   summary:
-    "Full-stack engineer working across Next.js, Node, Go and AWS. I take products from architecture to production: LangGraph agents, AI pipelines, serverless backends, and the interfaces people use them through. I graduated in Computer Science from NUST as a President's Gold Medalist (3.93 CGPA) and have spent the last three years shipping for startups and clients worldwide.",
+    "Software engineer at Alexein AI, a San Francisco-based startup backed by Stanford PhDs that builds persistent AI twins grounded in company knowledge graphs. I work across agentic AI, memory architectures, reinforcement learning and digital twins, and own the backend engineering. Before Alexein I built AI pipelines, LangGraph agents and AWS infrastructure at Alfabolt and BrainBox Automations. I graduated in Computer Science from NUST as a President's Gold Medalist, ranked 1st of 200 with a 3.93 CGPA.",
   email: "memonabdulrehman250@gmail.com",
   phone: "+92 316 0532576",
   website: "https://abdrehman.me",
@@ -30,9 +30,9 @@ export const profile = {
 } as const;
 
 export const stats = [
-  { value: "3+", label: "Years shipping production software" },
-  { value: "95%", label: "Manual work removed by an AI pipeline at Peak Energy" },
-  { value: "5", label: "Engineering teams, onsite and remote" },
+  { value: "3+", label: "Years building production software" },
+  { value: "95%", label: "Less manual work from the AI pipeline I built for Peak Energy" },
+  { value: "5", label: "Engineering roles, on-site and remote" },
   { value: "3.93", label: "CGPA, ranked 1st of 200 · President's Gold Medal" },
 ] as const;
 
@@ -55,11 +55,11 @@ export const experience: Experience[] = [
     mode: "Onsite",
     current: true,
     summary:
-      "Building agentic AI systems alongside Stanford PhD researchers, owning the backend and AI engineering that takes them from research to working software.",
+      "San Francisco-based startup backed by Stanford PhDs, building persistent AI twins grounded in company knowledge graphs. I work across agentic AI, memory architectures, reinforcement learning and digital twins, and own the backend engineering that turns that research into working software.",
     highlights: [
       "Design and build agentic systems: multi-step agents that plan, call tools and act on behalf of users.",
-      "Build SOTA (State-of-the-art) memory layers for agents.",
-      "Work directly with Stanford PhD researchers to turn research ideas into reliable, production-grade services.",
+      "Build memory layers that let agents retain and use context over time.",
+      "Work directly with Stanford PhD researchers to turn research ideas into reliable production services.",
       "Own the backend: APIs, agent orchestration, data pipelines and the infrastructure the agents run on.",
     ],
     stack: ["Python", "Agentic Systems", "LLMs", "LangGraph", "Backend APIs", "AWS", "PostgreSQL", "Redis"],
@@ -71,12 +71,12 @@ export const experience: Experience[] = [
     mode: "Onsite",
     current: false,
     summary:
-      "Building AI-first products for clients end to end, from agent design to AWS deployment.",
+      "Built AI products on Alfabolt's engineering team, from agent design and pipelines through to AWS deployment.",
     highlights: [
-      "Designed and shipped the AI pipeline for Peak Energy (peakenergy.io), cutting manual processing by ~95%, then extended the wider product as full-stack engineer.",
-      "Built ClaimBrite (claimbrite.com), an AI-powered mediation platform: multi-agent workflows in LangGraph, with the backend and agents deployed on AWS.",
+      "Built the AI pipeline for Peak Energy (peakenergy.io), cutting manual work by ~95%, then extended the wider product as a full-stack engineer.",
+      "Developed ClaimBrite (claimbrite.com), an AI-powered mediation platform: built its LangGraph agents and deployed the backend and agents on AWS.",
       "Led development of an internal sales-automation tool for lead tracking and outreach.",
-      "Built and maintained scrapers for Wellfound and Y Combinator to source startup and company data.",
+      "Built and maintained scrapers for Wellfound and Y Combinator that extract startup and company data.",
     ],
     stack: ["LangGraph", "Python", "Next.js", "TypeScript", "AWS", "PostgreSQL"],
   },
@@ -86,12 +86,12 @@ export const experience: Experience[] = [
     period: "Apr 2025 — Dec 2025",
     mode: "Remote",
     summary:
-      "Owned client projects end to end: architecture, implementation, deployment and production support.",
+      "Owned projects end to end: architecture, implementation, deployment and production support.",
     highlights: [
-      "Built and tuned AWS infrastructure (EC2, Lambda, S3, DynamoDB, Cognito) with CI/CD pipelines for automated testing and deploys.",
-      "Integrated LLM features and third-party platforms: Google Ads, Meta Ads APIs, Stripe payments and authentication.",
-      "Ran background workers and scheduled jobs that process async tasks, track execution state in DynamoDB and monitor external API workflows.",
-      "Worked directly with clients to scope requirements and deliver CMS-driven workflows and optimised data pipelines.",
+      "Built AWS infrastructure (EC2, Lambda, S3, DynamoDB, Cognito) and CI/CD pipelines for automated testing and deployment.",
+      "Integrated LLM features, Google Ads and Meta Ads APIs, Stripe payments and authentication.",
+      "Deployed background workers and scheduled (CRON) jobs that process async tasks and track execution state in DynamoDB.",
+      "Delivered CMS-driven workflows and optimised data pipelines.",
     ],
     stack: ["Next.js", "Node.js", "AWS Lambda", "DynamoDB", "Cognito", "Stripe"],
   },
@@ -100,11 +100,11 @@ export const experience: Experience[] = [
     role: "Software Engineer (Part-time)",
     period: "Nov 2024 — Jan 2025",
     mode: "Remote",
-    summary: "Backend APIs and cloud deployment for a growing product.",
+    summary: "Backend APIs, caching and containerised deployment on AWS.",
     highlights: [
       "Built backend APIs in Flask integrated with AWS services.",
-      "Added a Redis caching layer to cut response times on hot paths.",
-      "Containerised services with Docker and managed CI/CD pipelines.",
+      "Implemented Redis caching on the API layer.",
+      "Containerised applications with Docker and managed the CI/CD pipelines.",
     ],
     stack: ["Python", "Flask", "Redis", "Docker", "AWS"],
   },
@@ -113,7 +113,7 @@ export const experience: Experience[] = [
     role: "Next.js + Django Developer (Part-time)",
     period: "Sep 2023 — Oct 2024",
     mode: "Remote",
-    summary: "Shipped a complete SaaS product from first commit to paying customers.",
+    summary: "Built and deployed a complete SaaS application, including payment processing.",
     highlights: [
       "Developed and deployed a full SaaS application with integrated payment processing.",
       "Integrated third-party APIs and implemented JWT-based authentication.",
@@ -134,18 +134,18 @@ export type CaseStudy = {
   stack: string[];
 };
 
-// Client work highlighted above the project grid.
+// Products I built as a software engineer at Alfabolt, shown above the project grid.
 export const caseStudies: CaseStudy[] = [
   {
     name: "Peak Energy",
     tagline: "AI pipeline for energy operations",
     url: "https://peakenergy.io",
-    context: "Client · Alfabolt",
+    context: "Built at Alfabolt · 2026",
     problem:
-      "A large share of the team's day-to-day workflow was manual and repetitive, which limited how fast operations could scale.",
+      "Much of the day-to-day operational workflow was manual and repetitive, which limited how far operations could scale.",
     solution:
-      "Designed and built the AI pipeline that automates that workflow, then kept extending the platform with new features as full-stack engineer.",
-    impact: "Removed roughly 95% of the manual work and freed the team for higher-value tasks.",
+      "Designed and built the AI pipeline that automates that workflow, then kept extending the platform as a full-stack engineer.",
+    impact: "Cut the manual work in that workflow by roughly 95%.",
     metric: { value: "~95%", label: "less manual work" },
     stack: ["LLMs", "Python", "Next.js", "AWS"],
   },
@@ -153,12 +153,12 @@ export const caseStudies: CaseStudy[] = [
     name: "ClaimBrite",
     tagline: "AI-powered mediation platform",
     url: "https://claimbrite.com",
-    context: "Client · Alfabolt",
+    context: "Built at Alfabolt · 2026",
     problem:
       "Mediating claims is slow and labour-intensive, and each case needs structured reasoning across many inputs.",
     solution:
-      "Built the platform and its multi-agent workflows with LangGraph, and owned the AWS deployment of both the backend and the AI agents.",
-    impact: "Took the product from build to production on AWS, running agentic workflows in a live product.",
+      "Built the platform's multi-agent workflows in LangGraph and owned the AWS deployment of both the backend and the agents.",
+    impact: "Took the product from build to production, with agentic workflows running live on AWS.",
     metric: { value: "Multi-agent", label: "LangGraph on AWS" },
     stack: ["LangGraph", "Python", "AWS", "Next.js"],
   },
@@ -169,7 +169,7 @@ export type Project = {
   description: string;
   highlights: string[];
   stack: string[];
-  category: "Systems" | "Full Stack" | "Client";
+  category: "Systems" | "Applications";
   github?: string;
   live?: string;
   image?: string;
@@ -198,8 +198,8 @@ export const projects: Project[] = [
     description:
       "A Redis-compatible server in Go, built through the CodeCrafters challenge.",
     highlights: [
-      "TCP networking, RESP protocol, persistence and replication",
-      "Concurrent client handling with ~99% protocol compatibility",
+      "Core commands and data structures over TCP using the RESP protocol",
+      "Persistence, replication and handling of concurrent connections, with ~99% protocol compatibility",
     ],
     stack: ["Go", "TCP", "Concurrency"],
     category: "Systems",
@@ -209,9 +209,9 @@ export const projects: Project[] = [
   {
     name: "LeetCode Clone Backend",
     description:
-      "A distributed code-execution backend with WebSocket servers and worker nodes.",
+      "A distributed code-execution backend built from WebSocket servers and worker nodes.",
     highlights: [
-      "Sandboxed execution across multiple programming languages",
+      "Secure, sandboxed execution across multiple programming languages",
       "Test cases and submissions stored in Cloudflare R2",
     ],
     stack: ["Node.js", "WebSockets", "Workers", "Cloudflare R2"],
@@ -222,56 +222,35 @@ export const projects: Project[] = [
   },
   {
     name: "eSIM Marketplace",
-    description: "E-commerce platform for selling digital eSIMs, with payments and a CMS.",
+    description: "An e-commerce platform for selling digital eSIMs, with payments and a CMS.",
     highlights: [
-      "Stripe checkout, auth, order management and email notifications",
+      "Stripe checkout, authentication, order management and email notifications",
       "Sanity CMS for content and inventory",
     ],
     stack: ["Next.js", "Stripe", "Sanity", "Node.js"],
-    category: "Full Stack",
+    category: "Applications",
     github: "https://github.com/ABDREHMAN6224/esim-website",
   },
   {
-    name: "Gone But Never Forgotten",
-    description: "A memorial website for sharing tributes, with secure media uploads.",
-    highlights: [
-      "Clerk authentication and Cloudflare R2 media storage",
-      "Automated notifications; accessible, mobile-first design",
-    ],
-    stack: ["Next.js", "Clerk", "Cloudflare R2"],
-    category: "Client",
-    github: "https://github.com/ABDREHMAN6224/fiverr-1",
-  },
-  {
-    name: "Nooru Business Platform",
-    description: "A custom business platform for a Fiverr client.",
-    highlights: [
-      "NextAuth authentication and Nodemailer email automation",
-      "Responsive build with SEO work that improved search rankings",
-    ],
-    stack: ["Next.js", "NextAuth", "Nodemailer"],
-    category: "Client",
-  },
-  {
     name: "CropConnect",
-    description: "A social platform for farmers to share resources and collaborate.",
+    description: "A social platform where farmers share resources and collaborate.",
     highlights: [
       "Real-time messaging, geolocation and community forums",
-      "Weather APIs and crop-management tools",
+      "Weather data and crop-management tools",
     ],
     stack: ["MERN", "Socket.io", "Maps", "Weather API"],
-    category: "Full Stack",
+    category: "Applications",
     github: "https://github.com/ABDREHMAN6224/CropConnect",
   },
   {
     name: "DSA Visualizer",
-    description: "Interactive visualisations of data structures and algorithms.",
+    description: "Interactive visualisations of data structures and algorithms, built as a teaching tool.",
     highlights: [
       "Animated trees, heaps and sorting algorithms",
-      "Built as a teaching tool on the MERN stack",
+      "React front end with a Node.js and MongoDB backend",
     ],
     stack: ["React", "Node.js", "MongoDB"],
-    category: "Full Stack",
+    category: "Applications",
     live: "https://dsa-visualizer-arm.netlify.app",
     github: "https://github.com/ABDREHMAN6224/dsa_project_final",
     image: "/images/dsa.png",
@@ -280,34 +259,34 @@ export const projects: Project[] = [
 
 export const skillGroups = [
   {
-    title: "AI & LLMs",
-    blurb: "Agents and pipelines that run in production.",
+    title: "Backend & Distributed Systems",
+    blurb: "APIs, workers, real-time servers and the protocols underneath.",
+    items: ["Go", "Node.js", "Express", "Django / DRF", "Flask", "Prisma", "WebSockets", "REST APIs", "Background workers & CRON jobs", "TCP networking"],
+  },
+  {
+    title: "AI Systems",
+    blurb: "Agents, memory and pipelines built to run in production.",
     items: ["Agentic AI", "LangGraph", "Memory Architectures", "Reinforcement Learning", "Digital Twins", "LLMs", "RAG", "OpenAI API"],
   },
   {
-    title: "Frontend",
-    blurb: "Fast, accessible, well-crafted interfaces.",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "Material UI"],
-  },
-  {
-    title: "Backend",
-    blurb: "APIs, workers and real-time systems.",
-    items: ["Node.js", "Express", "Go", "Python", "Django / DRF", "Flask", "Prisma", "WebSockets", "REST"],
+    title: "Cloud & Infrastructure",
+    blurb: "Infrastructure as code, containers and automated delivery.",
+    items: ["AWS (EC2, Lambda, S3, RDS, SQS, SES, API Gateway, Cognito)", "CDK", "Terraform", "Docker", "CI/CD", "Cloudflare R2", "Vercel"],
   },
   {
     title: "Data",
-    blurb: "Relational, document and key-value stores.",
+    blurb: "Relational, document and key-value stores, plus caching.",
     items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "DynamoDB", "Supabase"],
   },
   {
-    title: "Cloud & DevOps",
-    blurb: "Infrastructure as code with automated delivery.",
-    items: ["AWS (EC2, Lambda, S3, RDS, SQS, SES, API Gateway, Cognito)", "CDK", "Terraform", "Docker", "CI/CD", "Vercel"],
+    title: "Frontend",
+    blurb: "Fast, accessible interfaces on top of the systems.",
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "Material UI"],
   },
   {
-    title: "Tooling & Integrations",
-    blurb: "Everything around the core product.",
-    items: ["Stripe", "Sanity CMS", "WebRTC", "Socket.io", "Jest", "Cypress", "Git / GitHub", "Google & Meta Ads APIs"],
+    title: "Languages & Tooling",
+    blurb: "Languages, testing and the integrations around a system.",
+    items: ["Go", "Python", "TypeScript", "Git / GitHub", "Jest", "Cypress", "Stripe", "Socket.io", "WebRTC", "Sanity CMS", "Google & Meta Ads APIs"],
   },
 ] as const;
 
@@ -329,38 +308,38 @@ export const nav = [
 
 /** About section narrative (hero/about). */
 export const about = {
-  title: "Engineer first, across the whole stack.",
-  titleAccent: "whole stack",
+  title: "I own systems end to end.",
+  titleAccent: "end to end",
   paragraphs: [
-    "I'm a full-stack engineer who works where product and AI meet. For the last three years I've shipped for startups and clients worldwide, usually owning the work end to end: architecture, data model, implementation, deployment and the production support that follows.",
-    "Lately that means agentic systems: LangGraph workflows and AI pipelines on serverless AWS, paired with fast interfaces in Next.js and TypeScript. Outside client work I like building from first principles, like a compiler with its own bytecode VM and a Redis-compatible server, both in Go.",
+    "I'm a software engineer at Alexein AI, where I work on agentic AI, memory architectures, reinforcement learning and digital twins, and own the backend those systems run on. Before that I was a software engineer at Alfabolt, where I built the AI pipeline behind Peak Energy and the LangGraph agents behind ClaimBrite, and a full-stack engineer at BrainBox Automations, where I built AWS infrastructure, background workers and CI/CD.",
+    "I usually own the work end to end: architecture, data model, implementation, deployment and the production support that follows. I pick tools to fit the problem rather than the other way round. Outside work I build from first principles to understand what sits underneath, like a compiler with its own bytecode VM and a Redis-compatible server, both in Go.",
   ],
 } as const;
 
 /** Key technologies scrolled in the hero marquee. */
 export const heroTech = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Node.js",
-  "Python",
   "Go",
+  "Python",
+  "TypeScript",
   "LangGraph",
+  "Agentic AI",
   "RAG",
   "AWS",
-  "Lambda",
-  "PostgreSQL",
-  "DynamoDB",
-  "Redis",
-  "Docker",
   "Terraform",
-  "Stripe",
+  "Docker",
+  "PostgreSQL",
+  "Redis",
+  "DynamoDB",
+  "WebSockets",
+  "Node.js",
+  "Django",
+  "Next.js",
 ] as const;
 
 // Contact section + footer copy.
 export const contact = {
-  headline: { lead: "Let's build something", accent: "worth shipping" },
-  lede: "Hiring for a senior full-stack or AI role, or have a product that needs building? Send a note. It comes straight to my inbox.",
+  headline: { lead: "Let's start a", accent: "conversation" },
+  lede: "Recruiting for an engineering role, working on similar problems in backend, distributed or AI systems, or want to compare notes? Send a message. It comes straight to my inbox.",
   formTitle: "Send a message",
   formNote: "Messages go directly to my inbox.",
   success: "Thanks, your message is on its way. I'll reply to the email you gave.",
@@ -369,5 +348,5 @@ export const contact = {
 } as const;
 
 export const footer = {
-  tagline: "Full-stack and AI engineer building production AI systems and the products around them.",
+  tagline: "Software engineer working on backend, distributed and AI systems. Currently at Alexein AI.",
 } as const;

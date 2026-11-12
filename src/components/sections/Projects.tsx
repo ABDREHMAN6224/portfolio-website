@@ -11,7 +11,7 @@ import { GithubIcon } from "@/components/ui/brand-icons";
 type Filter = "All" | Project["category"];
 type IndexedProject = Project & { index: string };
 
-const FILTERS: Filter[] = ["All", "Systems", "Full Stack", "Client"];
+const FILTERS: Filter[] = ["All", "Systems", "Applications"];
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const ALL: IndexedProject[] = projects.map((p, i) => ({ ...p, index: String(i + 1).padStart(2, "0") }));
@@ -55,7 +55,7 @@ export default function Projects() {
             Things I&apos;ve <Accent>built</Accent>
           </>
         }
-        lede="Full-stack products, and the systems underneath them: a compiler and VM and a Redis-compatible server in Go, plus a distributed code-execution backend."
+        lede="Systems built from scratch: a compiler and VM and a Redis-compatible server in Go, and a distributed code-execution backend. Plus the applications I've built along the way."
       />
 
       <Reveal className="mb-8 flex flex-wrap items-center justify-between gap-4">

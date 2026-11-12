@@ -28,10 +28,10 @@ export default function Experience() {
         eyebrow="Experience"
         title={
           <>
-            Three years of shipping, <Accent>end to end</Accent>
+            Three years of engineering, <Accent>end to end</Accent>
           </>
         }
-        lede="From a first SaaS launch to production AI systems for clients. The teams I've built with, most recent first."
+        lede="From a first SaaS launch to backend and AI systems running in production. The teams I've worked on, most recent first."
       />
 
       <ol ref={listRef} className="relative">

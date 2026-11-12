@@ -322,7 +322,7 @@ function ContactForm() {
               id="contact-message"
               name="message"
               rows={6}
-              placeholder="What are you working on, and how can I help?"
+              placeholder="A role, a project or a technical question. Tell me a bit about it."
               value={values.message}
               disabled={sending}
               aria-invalid={errors.message ? true : undefined}

@@ -4,12 +4,12 @@ import { skillGroups } from "@/content/site";
 import { Accent, Reveal, Section, SectionHeading, Tag } from "@/components/ui/primitives";
 
 const ICONS: Record<string, LucideIcon> = {
-  "AI & LLMs": Sparkles,
-  Frontend: PanelsTopLeft,
-  Backend: Server,
+  "Backend & Distributed Systems": Server,
+  "AI Systems": Sparkles,
+  "Cloud & Infrastructure": Cloud,
   Data: Database,
-  "Cloud & DevOps": Cloud,
-  "Tooling & Integrations": Wrench,
+  Frontend: PanelsTopLeft,
+  "Languages & Tooling": Wrench,
 };
 
 // Bento placement by position: the lead group is a 2x2 tile on desktop; the last tile fills the md row.
@@ -30,13 +30,13 @@ export default function Skills() {
     <Section id="skills">
       <SectionHeading
         index="05"
-        eyebrow="Toolkit"
+        eyebrow="Capabilities"
         title={
           <>
-            The <Accent>stack</Accent> I ship with
+            The right tool for the <Accent>problem</Accent>
           </>
         }
-        lede="What I reach for day to day, from agent orchestration to the infrastructure it runs on."
+        lede="I work across backend, AI, frontend, data and cloud infrastructure. These are the tools I use in each, chosen to fit the problem."
       />
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

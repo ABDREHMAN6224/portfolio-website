@@ -1,6 +1,6 @@
 # abdrehman.me
 
-Personal portfolio of Abdul Rehman Memon: Full Stack & AI Engineer.
+Personal portfolio of Abdul Rehman Memon: Software Engineer.
 
 Built with Next.js (App Router, static export), TypeScript, Tailwind CSS v4 and Motion. Deployed on Netlify.
 

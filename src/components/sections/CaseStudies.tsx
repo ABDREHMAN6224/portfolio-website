@@ -23,10 +23,10 @@ export default function CaseStudies() {
         eyebrow="Selected work"
         title={
           <>
-            Client work in <Accent>production</Accent>
+            Work running in <Accent>production</Accent>
           </>
         }
-        lede="Two AI products I built for clients at Alfabolt, taken from design through to production."
+        lede="Two AI products I built as an engineer at Alfabolt, taken from design through to production."
       />
 
       <div className="space-y-6 sm:space-y-8">
