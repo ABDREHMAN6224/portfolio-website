@@ -174,6 +174,8 @@ export type Project = {
   live?: string;
   image?: string;
   featured?: boolean;
+  /** Listed compactly under "Also built": name, one-line description and stack only. */
+  minor?: boolean;
   /** Decorative illustration shown on featured project cards. */
   visual?: "compiler" | "terminal" | "workers";
 };
@@ -221,28 +223,6 @@ export const projects: Project[] = [
     visual: "workers",
   },
   {
-    name: "eSIM Marketplace",
-    description: "An e-commerce platform for selling digital eSIMs, with payments and a CMS.",
-    highlights: [
-      "Stripe checkout, authentication, order management and email notifications",
-      "Sanity CMS for content and inventory",
-    ],
-    stack: ["Next.js", "Stripe", "Sanity", "Node.js"],
-    category: "Applications",
-    github: "https://github.com/ABDREHMAN6224/esim-website",
-  },
-  {
-    name: "CropConnect",
-    description: "A social platform where farmers share resources and collaborate.",
-    highlights: [
-      "Real-time messaging, geolocation and community forums",
-      "Weather data and crop-management tools",
-    ],
-    stack: ["MERN", "Socket.io", "Maps", "Weather API"],
-    category: "Applications",
-    github: "https://github.com/ABDREHMAN6224/CropConnect",
-  },
-  {
     name: "DSA Visualizer",
     description: "Interactive visualisations of data structures and algorithms, built as a teaching tool.",
     highlights: [
@@ -254,6 +234,24 @@ export const projects: Project[] = [
     live: "https://dsa-visualizer-arm.netlify.app",
     github: "https://github.com/ABDREHMAN6224/dsa_project_final",
     image: "/images/dsa.png",
+  },
+  {
+    name: "eSIM Marketplace",
+    description: "E-commerce platform for digital eSIMs with Stripe checkout, order management and a Sanity CMS.",
+    highlights: [],
+    stack: ["Next.js", "Stripe", "Sanity"],
+    category: "Applications",
+    github: "https://github.com/ABDREHMAN6224/esim-website",
+    minor: true,
+  },
+  {
+    name: "CropConnect",
+    description: "Social platform for farmers with real-time messaging, geolocation and community forums.",
+    highlights: [],
+    stack: ["MERN", "Socket.io"],
+    category: "Applications",
+    github: "https://github.com/ABDREHMAN6224/CropConnect",
+    minor: true,
   },
 ];
 

@@ -35,7 +35,8 @@ export default function Projects() {
 
   const visible = ALL.filter((p) => filter === "All" || p.category === filter);
   const featured = visible.filter((p) => p.featured);
-  const rest = visible.filter((p) => !p.featured);
+  const rest = visible.filter((p) => !p.featured && !p.minor);
+  const minor = visible.filter((p) => p.minor);
 
   const collapse: Transition = reduce ? { duration: 0 } : { duration: 0.45, ease: EASE };
   const presence = {
@@ -124,12 +125,12 @@ export default function Projects() {
       </AnimatePresence>
 
       <AnimatePresence>
-        {rest.length > 0 && (
+        {rest.length + minor.length > 0 && (
           <motion.div key="rest" {...presence}>
             <Reveal className="overflow-hidden rounded-2xl border border-line bg-surface/40">
               <div className="flex items-center justify-between px-5 py-3.5 font-mono text-[11px] uppercase tracking-[0.18em] text-subtle sm:px-6">
                 <span>More projects</span>
-                <span>{String(rest.length).padStart(2, "0")}</span>
+                <span>{String(rest.length + minor.length).padStart(2, "0")}</span>
               </div>
               <ul>
                 <AnimatePresence>
@@ -140,6 +141,18 @@ export default function Projects() {
                   ))}
                 </AnimatePresence>
               </ul>
+              {minor.length > 0 && (
+                <div className="border-t border-line px-5 py-5 sm:px-6">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-subtle">Also built</p>
+                  <ul className="mt-3 grid gap-x-8 gap-y-4 md:grid-cols-2">
+                    {minor.map((p) => (
+                      <li key={p.name}>
+                        <MinorItem project={p} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </Reveal>
           </motion.div>
         )}
@@ -306,8 +319,18 @@ function ProjectRow({ project }: { project: IndexedProject }) {
   );
 }
 
+function MinorItem({ project }: { project: IndexedProject }) {
+  return (
+    <article className="group relative min-w-0">
+      <TitleLink project={project} className="text-[15px]" />
+      <p className="mt-1 text-sm leading-relaxed text-muted">{project.description}</p>
+      <p className="mt-1.5 font-mono text-[11px] text-subtle">{project.stack.join(" · ")}</p>
+    </article>
+  );
+}
+
 /* ------------------------------------------------------------------------------------------------ */
-/* Decorative visuals (aria-hidden by the parent)                                                    */
+/* Decorative visuals (aria-hidden by the parent)                                                  */
 /* ------------------------------------------------------------------------------------------------ */
 
 function Visual({ kind }: { kind: Project["visual"] }) {
